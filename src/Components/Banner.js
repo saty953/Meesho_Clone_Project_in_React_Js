@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import "./App.css";
 const BannerA = styled.div`
   width: 100%;
   margin: 0;
@@ -42,6 +42,7 @@ const Image = styled.img`
 
 export const Banner = () => {
   return (
+   <div className="banner">
     <BannerA>
       <BannerWrap>
         <LeftBanner>
@@ -60,5 +61,6 @@ export const Banner = () => {
         </RightBanner>
       </BannerWrap>
     </BannerA>
+    </div>
   );
 };

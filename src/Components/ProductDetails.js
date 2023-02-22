@@ -110,6 +110,7 @@ export const ProductDetails = () => {
   const [productd, setPRoductD] = useState([]);
   const [loading, setLoading] = useState(false);
   const context = useContext(userContext);
+  const uniqueId = new Date().getTime().toString();
   useEffect(() => {
     setLoading(true);
     fetch(`https://fakestoreapi.com/products/${params.id}`)
@@ -123,25 +124,36 @@ export const ProductDetails = () => {
   }, [params.id]);
 
   function clickHandler() {
-    <>{verify? <>
-      {toast.success(" item added to cart",  {position: "top-left",
-autoClose: 500,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "colored"})}
-      {console.log("Item added to the cart of use context  ")}
-      {context.cart.push(productd)}
-      {navigate("/")}
-       </>:<>
+    <>
+      {verify ? (
+        <>
+          {toast.success(" item added to cart", {
+            position: "top-left",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          })}
+          {console.log("Item added to the cart of use context  ",uniqueId)}
+
+          {context.cart.push({
+            ...productd,
+            key: uniqueId,
+          })}
+          {navigate("/")}
+        </>
+      ) : (
+        <>
           {toast.error("Please Login first to order", {
             position: "top-center",
             autoClose: "6000",
           })}
           {navigate("/b")}
-        </>}
+        </>
+      )}
     </>;
   }
 

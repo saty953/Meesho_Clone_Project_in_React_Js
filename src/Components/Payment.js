@@ -35,9 +35,10 @@ export const Payment = () => {
         theme: "colored",
       });
     } else {
+      navigate("/");
       toast.success("Congratulations! your order get placed.", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 10000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -46,7 +47,7 @@ export const Payment = () => {
         theme: "colored",
       });
       console.log("in payment  context is", object.cart.cart);
-      navigate("/");
+   
       {
         document.location.reload();
       }
