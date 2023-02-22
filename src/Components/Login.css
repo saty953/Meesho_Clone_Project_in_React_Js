@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+}
+#Logout {
+  color: white;
+  width: 70%;
+  border: none;
+  height: 20vh;
+  border-radius: 8px;
+  background-color: rgb(220, 78, 151);
+  border: 2px solid black;
+  margin-top: 10%;
+  margin-bottom: 30px;
+}
+#Logout:hover {
+  background-color: rgb(255, 0, 132);
+  color: black;
+}
+.navigateHome {
+  color: white;
+  width: 50%;
+  border: none;
+  height: 20vh;
+  border-radius: 8px;
+  background-color: rgb(220, 78, 151);
+  border: 1px solid rgb(1, 1, 1);
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigateHome:hover {
+  background-color: rgb(255, 0, 132);
+  color: black;
+}
+.navi {
+  color: rgb(0, 0, 0);
+  width: 100%;
+  border: none;
+  height: 10vh;
+  border-radius: 8px;
+  background-color: rgb(118, 220, 78);
+  border: 1px solid pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

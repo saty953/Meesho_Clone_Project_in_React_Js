@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-bottom: 0.5px solid rgb(197, 193, 193);
+  position: relative;
+}
+.main-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /*                           //not use test purpose */
+  width: 98%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 8px;
+  height: auto;
+  min-height: 70px;
+}
+.leftNav {
+  cursor: pointer;
+}
+.midNav {
+  box-sizing: border-box;
+  flex: 0.8;
+  margin: auto;
+  height: 100%;
+  display: flex;
+
+  align-items: center;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+}
+input {
+  width: 100%;
+  font-size: 1em;
+  border: none;
+  outline: none;
+}
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.downloadApp {
+  display: flex;
+  align-items: center;
+}
+.downloadApp:hover {
+  cursor: pointer;
+  color: rgb(244, 51, 151);
+  font-weight: 500;
+}
+.verticalLine {
+  border-left: 0.5px solid rgb(197, 193, 193);
+  height: 40px;
+}
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.profileContainer:hover {
+  cursor: pointer;
+  color: rgb(244, 51, 151);
+  font-weight: 500;
+}
