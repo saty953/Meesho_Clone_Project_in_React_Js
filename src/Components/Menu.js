@@ -36,10 +36,6 @@ letter-spacing: 0.5px;
                 
 }
 `;
-// const VerticalLine = styled.div`
-//   border-left: 0.5px solid rgb(197, 193, 193);
-//   height: 40px;
-// `;
 
 export const Menu = ()=>{
 

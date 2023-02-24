@@ -62,13 +62,10 @@ export const CartItem = (props) => {
   const ProductPrice = product.price * 100;
 
   function itemRemoved() {
-    console.log("cart product in the cart", Array.cart);
-    console.log("Id of the selected product ", product.id);
-
     const newCart = CartProduct.cart.filter((item, i) => {
       return product.key !== item.key;
     });
-    console.log("newCart is", newCart);
+
     Array.setCart(newCart);
     toast.success("Item Removed", {
       position: "top-left",

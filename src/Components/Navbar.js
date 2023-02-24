@@ -110,7 +110,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const contextInN = useContext(userContext);
   const Length = contextInN.cart.length;
-  // console.log("lenght of cart in navbar", Length);
+
   let condition = false;
   if (Length > 1) {
     condition = true;

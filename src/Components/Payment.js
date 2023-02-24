@@ -15,7 +15,6 @@ const CartHeader = styled.div`
 `;
 export const Payment = () => {
   const object = useContext(userContext);
-  console.log("in payment  context is", object);
   const navigate = useNavigate();
 
   const [card, setCard] = useState();
@@ -45,12 +44,9 @@ export const Payment = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-      });
-      console.log("in payment  context is", object.cart.cart);
-
-      {
+      }); 
         document.location.reload();
-      }
+      
     }
   };
   const OrdertoPay = object.cart.reduce((T, C, I) => {
@@ -72,7 +68,7 @@ export const Payment = () => {
           </h2>
           <from>
             <br></br>
-            <label for="cnum">Enter the card number :</label>
+            <label htmlFor="cnum">Enter the card number :</label>
             <input
               id="cnum"
               type="tel"
@@ -84,7 +80,7 @@ export const Payment = () => {
             />
             <br></br>
             <br></br>
-            <label for="expiry">Enter the expiry date :</label>
+            <label htmlFor="expiry">Enter the expiry date :</label>
             <input
               id="expiry"
               value={exDate}
@@ -96,7 +92,7 @@ export const Payment = () => {
             />
             <br></br>
             <br></br>
-            <label for="cvv">Enter your CVV :</label>
+            <label htmlFor="cvv">Enter your CVV :</label>
             <input
               id="cvv"
               type="tel"

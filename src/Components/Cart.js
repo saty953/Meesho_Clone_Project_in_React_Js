@@ -79,8 +79,6 @@ export const Cart = () => {
   const [productPrice, setProductPrice] = useState(0);
   const navigate = useNavigate();
   const condtion = product.cart.length;
-  console.log("product in the cart", product.cart);
-  console.log("lenght of the cart ", condtion);
   var a = 0;
   if (condtion > 1) {
     a = product.cart.reduce((T, C, I) => {

@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import {  toast } from "react-toastify";
+import React from "react";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
 import Navbar from "./Navbar";
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import Header from "./Header";
 import { Footer } from "./Footer";
-import {mobile,tab} from "../responsive"
+import { mobile, tab } from "../responsive";
 // import { userContext } from "./Contex/UserContext";
 const LoginContainer = styled.div`
   display: relative;
@@ -74,7 +74,6 @@ const Condition = styled.div`
 `;
 
 const Login = () => {
-  // const ClearCart=useContext(userContext);
   const [mob, setMob] = useState("");
   const verify = localStorage.getItem("userNumber");
   const [otp, setOtp] = useState("");
@@ -115,9 +114,9 @@ const Login = () => {
         progress: undefined,
         theme: "colored",
       });
-      {
-        localStorage.setItem("userNumber", mob);
-      }
+
+      localStorage.setItem("userNumber", mob);
+
       navigate("/");
     } else {
       toast.error("Please enter the right OTP", {
@@ -169,10 +168,8 @@ const Login = () => {
                   });
                   //setting cart to zero after logout
                   navigate("/");
-                  {
-                    document.location.reload();
-                  }
-                
+
+                  document.location.reload();
                 }}
               >
                 {" "}
