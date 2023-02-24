@@ -145,7 +145,8 @@ export const ProductDetails = () => {
             progress: undefined,
             theme: "colored",
           })}
-          {console.log("Item added to the cart of use context  ", uniqueId)}
+          
+          {/* {console.log("Item added to the cart of use context  ", uniqueId)} */}
 
           {context.cart.push({
             ...productd,
