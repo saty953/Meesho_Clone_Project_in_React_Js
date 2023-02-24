@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import { Button } from "bootstrap";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
@@ -9,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import Header from "./Header";
 import { Footer } from "./Footer";
-import { userContext } from "./Contex/UserContext";
+import {mobile,tab} from "../responsive"
+// import { userContext } from "./Contex/UserContext";
 const LoginContainer = styled.div`
   display: relative;
   width: 100%;
@@ -28,6 +28,8 @@ const LoginBox = styled.div`
   padding: 50px;
   margin: auto;
   border-radius: 5px;
+  ${mobile({ width: "95%" })}
+  ${tab({ width: "95%" })}
 `;
 const Typography = styled.div`
   font-size: 18px;
@@ -72,7 +74,7 @@ const Condition = styled.div`
 `;
 
 const Login = () => {
-  const ClearCart=useContext(userContext);
+  // const ClearCart=useContext(userContext);
   const [mob, setMob] = useState("");
   const verify = localStorage.getItem("userNumber");
   const [otp, setOtp] = useState("");
@@ -139,7 +141,7 @@ const Login = () => {
             <Header />
             <h1 style={{ marginLeft: "20%" }}>Hi ,</h1>
             <div className="navi">
-              <h2>your userNumber is :{verify}</h2>
+              <h2 style={{ marginLeft: "10%" }}>Your userNumber is {verify}</h2>
             </div>
             <div className="container">
               {" "}

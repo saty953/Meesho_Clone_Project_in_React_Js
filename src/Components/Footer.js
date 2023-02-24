@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import {mobile,tab} from "../responsive";
 const Container = styled.div`
   box-sizing: border-box;
   width: 100%;
@@ -28,6 +28,8 @@ const DownloadApp = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   margin: 30px auto;
+  ${mobile({display:"none"})}
+  ${tab({display:"none"})}
 `;
 const SocialMedia = styled.div`
   display: flex;
@@ -36,10 +38,14 @@ const SocialMedia = styled.div`
 const P = styled.p`
   cursor: pointer;
   margin: 0 auto 10px;
+  ${mobile({ fontSize: "10px" })}
 `;
 const Topic = styled.div`
   margin-left: 25px;
   margin-right: 19px;
+`;
+const H2=styled.h2`
+${mobile({ fontSize: "20px" })}
 `;
 export const Footer = () => {
   return (
@@ -48,7 +54,7 @@ export const Footer = () => {
         <FooterWrap>
           <Info>
             {" "}
-            <h2 style={{ margin: "0 auto 30px" }}>Shop Non-stop on Meesho</h2>
+            <H2 style={{ margin: "0 auto 30px" }}>Shop Non-stop on Meesho</H2>
             <Aboutmesso>
               <P>
                 Trusted by more than 1 crore Indians <br /> Cash on Delivery |
@@ -64,12 +70,12 @@ export const Footer = () => {
                 <P>Meesho Tech blog</P>
               </Topic>
               <Topic>
-                <h4 style={{ magin: "0" }}>Contact Satyam:</h4>
+                <H2 style={{ magin: "0" }}>Contact Satyam:</H2>
                 <P>saty953@gmail.com</P>
               </Topic>
 
               <Topic>
-                <h4 style={{ magin: "0" }}>Reach out to us</h4>
+                <H2 style={{ magin: "0" }}>Reach out to us</H2>
 
                 <SocialMedia>
                   <a href="https://www.facebook.com/meeshosupply">

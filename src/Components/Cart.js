@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { CartItem } from "./CartItem";
-
 import { userContext } from "./Contex/UserContext";
 import { Footer } from "./Footer";
 import Navbar from "./Header";
 import styled from "styled-components";
+import { tab, mobile } from "../responsive";
 import { useNavigate } from "react-router-dom";
 import { Banner } from "./Banner";
 
@@ -21,6 +21,8 @@ const Right = styled.div`
   background: #ebebeb;
   width: 50%;
   flex-direction: column;
+  ${mobile({ flexDirection: "column" ,width:"100%"})}
+  ${tab({ flexDirection: "column" ,width:"100%"})}
 `;
 const Mybutton = styled.div`
   height: 60px;
@@ -35,14 +37,16 @@ const Mybutton = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  ${mobile({width:"100%",height:"25px"})}
   :hover {
     background: #ff80bf;
   }
 `;
 const Container = styled.div`
   display: flex;
-
   justify-content: center;
+  ${mobile({ alignItems:"center" ,justifyContent:"center"})}
+  ${tab({ alignItems:"center" ,justifyContent:"center"})}
 `;
 const ListWrap = styled.div`
   display: flex;
@@ -50,18 +54,24 @@ const ListWrap = styled.div`
   gap: 10px;
   padding: 10px;
   justify-content: center;
+  align-items:center;
   border: 1px solid #e8388d;
   background: white;
   width: 85%;
+  ${mobile({ flexDirection: "column" ,width:"100%"})}
+  ${tab({ flexDirection: "column" ,width:"100%"})}
 `;
 const Left = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
   height: auto;
+  overflow:hidden;
   background: white;
   //   justify-content: center;
   align-items: center;
+  ${mobile({ flexDirection: "column" ,width:"100%"})}
+  ${tab({ flexDirection: "column" ,width:"100%"})}
 `;
 export const Cart = () => {
   const [currentCart, setCurrentCart] = useState(0);
@@ -69,18 +79,23 @@ export const Cart = () => {
   const [productPrice, setProductPrice] = useState(0);
   const navigate = useNavigate();
   const condtion = product.cart.length;
-  console.log("product in the cart",product.cart)
-  console.log("lenght of the cart ",condtion)
-  var a=0;
-  if(condtion>1){  a = product.cart.reduce((T, C, I) => {
-    return T + C.price;
-  }, 0);}
+  console.log("product in the cart", product.cart);
+  console.log("lenght of the cart ", condtion);
+  var a = 0;
+  if (condtion > 1) {
+    a = product.cart.reduce((T, C, I) => {
+      return T + C.price;
+    }, 0);
+  }
 
   return (
     <>
       <Navbar />
       {condtion > 1 ? (
-        <>
+        <div style={{
+          direction:"flex" ,justifyContent:"center"
+        }
+        }>
           <CartHeader style={{ justifyContent: "center", display: "flex" }}>
             <h1>Your Cart</h1>
           </CartHeader>
@@ -122,12 +137,11 @@ export const Cart = () => {
                   ₹{Math.floor(a * 100) - 33}
                 </bold>
                 <p style={{ textAlign: "center" }}>
-                Clicking on ‘Continue’ will not deduct any money
+                  Clicking on ‘Continue’ will not deduct any money
                 </p>
                 <Mybutton
                   onClick={() => {
-              navigate("/payment")
-                   ;
+                    navigate("/payment");
                   }}
                 >
                   Continue
@@ -135,7 +149,7 @@ export const Cart = () => {
               </Right>
             </ListWrap>
           </Container>
-        </>
+        </div>
       ) : (
         <>
           <CartHeader
@@ -155,7 +169,7 @@ export const Cart = () => {
               Go on Home Page..
             </Mybutton>
           </CartHeader>
-          <Banner/>
+          <Banner />
         </>
       )}
       <Footer />

@@ -47,7 +47,7 @@ export const Payment = () => {
         theme: "colored",
       });
       console.log("in payment  context is", object.cart.cart);
-   
+
       {
         document.location.reload();
       }
@@ -61,12 +61,12 @@ export const Payment = () => {
       {" "}
       <Navbar />
       <CartHeader style={{ justifyContent: "center", display: "flex" }}>
-        <h1>Proceed Your Payment</h1>
+        <h1 className="Proceed">Proceed Your Payment</h1>
       </CartHeader>
       <div id="container">
         <div class="wraper">
           {" "}
-          <h2 style={{ top: "0px" }}>
+          <h2 className="phead" style={{ top: "0px" }}>
             Payment of :<span style={{ color: "rgb(134, 255, 100)" }}> ₹</span>
             {Math.floor(OrdertoPay * 100 - 33)}/-
           </h2>

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { userContext } from "./Contex/UserContext";
 import { Footer } from "./Footer";
 import Header from "./Header";
+import { mobile, tab } from "../responsive";
 
 const ProductDetailConatainer = styled.div`
   box-sizing: border-box;
@@ -15,7 +16,7 @@ const ProductDetailConatainer = styled.div`
 const DetailWraper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 30px;
 `;
@@ -30,6 +31,8 @@ const ImageConatainer = styled.div`
   border: 1px solid rgb(207, 203, 203);
   height: 400px;
   border-radius: 5px;
+  ${mobile({ width: "95%",height:"50px" })}
+  ${tab({ width: "95%",height:"200px" })}
 `;
 const MyImage = styled.img`
   width: 100%;
@@ -78,6 +81,7 @@ const Rating = styled.div`
   display: flex;
   gap: 15px;
   align-items: center;
+  ${mobile({ display: "none" })}
 `;
 const ProductSpanDelivery = styled.span`
   background-color: rgb(243, 237, 237);
@@ -101,6 +105,10 @@ const MyButton = styled.div`
   :hover {
     background: #00e600;
   }
+  ${mobile({ height: "35px" })}
+`;
+const Description = styled.span`
+  ${mobile({ fontSize: "8px" })}
 `;
 
 export const ProductDetails = () => {
@@ -137,7 +145,7 @@ export const ProductDetails = () => {
             progress: undefined,
             theme: "colored",
           })}
-          {console.log("Item added to the cart of use context  ",uniqueId)}
+          {console.log("Item added to the cart of use context  ", uniqueId)}
 
           {context.cart.push({
             ...productd,
@@ -197,7 +205,7 @@ export const ProductDetails = () => {
 
                   <Rating>{213}</Rating>
 
-                  <span>{productd.description}</span>
+                  <Description>{productd.description}</Description>
                   <div>
                     <ProductSpanDelivery>Free Delivery</ProductSpanDelivery>
                   </div>

@@ -1,11 +1,14 @@
+
 import React from "react";
 import styled from "styled-components";
-
+import {mobile ,tab} from "../responsive";
 const MenuC=styled.div`
 width: 100%;
 margin: 0;
 padding: 0;
 border-bottom: 0.5px solid rgb(197, 193, 193);
+${mobile({ display: "none" })}
+${tab({ display: "none" })}
 `;
 const MenuList=styled.div`
 box-sizing: border-box;

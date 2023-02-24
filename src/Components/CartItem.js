@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { userContext } from "./Contex/UserContext";
-
+import {tab,mobile} from "../responsive";
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -12,7 +12,10 @@ const MyImgae = styled.img`
 height:100px;
 width:40%
 border:4px solid black;
-
+${mobile({
+height:"75px",width:"55px"})}
+${tab({
+  height:"75px",width:"55px"})}
 `;
 
 const ProductD = styled.div`
@@ -24,6 +27,8 @@ const ProductT = styled.div`
   align-text: center;
   width: 170px;
   font-weight: bold;
+  ${mobile({fontSize:"12px"})}
+  ${tab({fontSize:"12px"})}
 `;
 const Hr = styled.div`
   width: 85%;
@@ -43,6 +48,8 @@ const Cancel = styled.div`
   background: #ff4da6;
   border-radius: 4px;
   text-align: center;
+  ${mobile({width:"45%"})}
+  ${tab({width:"45%"})}
   :hover {
     background: #ff80bf;
   }
@@ -56,7 +63,7 @@ export const CartItem = (props) => {
 
   function itemRemoved() {
     console.log("cart product in the cart", Array.cart);
-    console.log("Id of the selected product ",product.id);
+    console.log("Id of the selected product ", product.id);
 
     const newCart = CartProduct.cart.filter((item, i) => {
       return product.key !== item.key;
@@ -88,10 +95,9 @@ export const CartItem = (props) => {
         <ProductD>
           <ProductT>
             {product.title}
-            {}
           </ProductT>
           <div>₹{ProductPrice}</div>{" "}
-          <Cancel onClick={itemRemoved}>Cancel this item</Cancel>
+          <Cancel onClick={itemRemoved}>Remove</Cancel>
         </ProductD>{" "}
       </Container>{" "}
       <Hr />
