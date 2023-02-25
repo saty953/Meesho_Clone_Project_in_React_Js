@@ -27,8 +27,8 @@ const ProductsContainer = styled.div`
   box-sizing: border-box;
   flex-basis: 25%;
   align-items: center;
-  margin-left: 0px;
-  gap: 6px;
+  margin-left: 20px;
+  gap: 25px;
   ${tab({ alignItems: "center", justifyContent: "center" })}
   ${mobile({ alignItems: "center", justifyContent: "center" })}
 `;

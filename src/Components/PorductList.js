@@ -8,17 +8,20 @@ const CardWrapper = styled.div`
   box-sizing: border-box;
   height: auto;
   border: 0.5px solid rgb(226, 221, 221);
+  border-radius: 15px;
   cursor: pointer;
   color: rgb(110, 99, 99);
   :hover {
-    border: 2px solid pink;
     transform: translate(0, -5px);
-    box-shadow: 2px 4px pink;
+    box-shadow: 2px 7px #ff80bf;
   }
-  ${mobile({ width: "100px" ,height:"25%" })}
-  ${tab({ width: "100px" ,height:"35vh"})}
+  ${mobile({ width: "100px", height: "25%" })}
+  ${tab({ width: "100px", height: "35vh" })}
 `;
 const ProductImage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 280px;
   position: relative;
@@ -62,8 +65,8 @@ const Delivery = styled.span`
   border-radius: 10px;
   color: grey;
   font-weight: 500;
-  ${mobile({ fontSize: "10px", color: "green"})}
-  ${tab({ fontSize: "10px", color: "green"})}
+  ${mobile({ fontSize: "10px", color: "green" })}
+  ${tab({ fontSize: "10px", color: "green" })}
 `;
 const FeedBack = styled.div`
   margin-top: 5px;
@@ -85,8 +88,8 @@ const Ratting = styled.span`
   ${mobile({ display: "none" })}
 `;
 const Myimg = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 80%;
 `;
 
 export const ProductCard = (product) => {
