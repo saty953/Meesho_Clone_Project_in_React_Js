@@ -9,6 +9,7 @@ const CardWrapper = styled.div`
   height: auto;
   border: 0.5px solid rgb(226, 221, 221);
   cursor: pointer;
+
   color: rgb(110, 99, 99);
   :hover {
     border: 2px solid pink;
@@ -91,7 +92,7 @@ const Myimg = styled.img`
 
 export const ProductCard = (product) => {
   return (
-    <Link to={`products/${product.product.id}`}>
+    <Link to={`products/${product.product.id}`} style={{textDecoration: 'none'}}>
       <CardWrapper>
         <ProductImage>
           <Myimg src={product.product.image} alt="product image"></Myimg>
