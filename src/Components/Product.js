@@ -55,7 +55,7 @@ export const Product = () => {
       <Products>
         <PorductList>
           <H4 style={{ fontSize: "1.5em" }}>Products for you</H4>
-          {loading && <h1 style={{ color: "#ff0080" }}>loading.....</h1>}
+          {loading && <h1 style={{ color: "#ff0080" }}>loading......</h1>}
           <ProductsContainer>
             {data?.map((product) => (
               <ProductCard key={product.id} product={product} />
